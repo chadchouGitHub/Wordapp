@@ -1,0 +1,60 @@
+Predicting Next Word
+========================================================
+Data Science Capstone Project
+
+
+
+
+
+
+
+author: Chia-Ching Chou
+
+date: 04/15/2015
+
+
+Predicting Next Word
+========================================================
+
+A Word predicting Shiny-App
+
+- A shiny App at this link 
+- This Shiny App will take a input text and give out a word.
+- The giving word is a prediction for the next word that user may type fellow up with the input text.
+
+
+Where you type your input text?
+========================================================
+
+![alt text](inputT.png)
+***
+The Red arrow shows where you type your text.
+
+Where you will see your predicting word?
+========================================================
+![alt text](predictT.png)
+***
+The red arrow shows where the predicting word will appear.
+
+Elements in Prediction Algorithms
+========================================================
+
+- A biToken ranking table was made from 10,000 text line in Capstone Data set. The Higher frequence will ranking at the front of list.
+- The last word of input text will use to select a list of candidate words.
+- A triToken ranking table will also use to find match when there are more than one word in the input text box.
+- A flow chart for the Algorithms is presenting at next slide.
+
+
+Prediction Algorithms
+========================================================
+![alt text](alg.png)
+
+Summary
+========================================================
+- The biToken table can improve by better ranking order.
+
+- This word prediction are predicting by words chunks. No grammar will apply in this prediction.
+
+- triToken match take very long time to find match, maybe need better method to search through.
+
+- The prediction for high frequency word has lower accuracy. The high frequency words like the, is, and it. Also know as stop words.
