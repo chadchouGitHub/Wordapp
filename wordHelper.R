@@ -5,6 +5,7 @@
 
 ###----------------------------------loading word ranking df-----------------------------------
 ### Need to make sure the RData file is in the correct directory
+<<<<<<< HEAD
 #load('~/word-app/data/sortedOneTwoTri.RData')
 library(RCurl)
 url2 <- getURL("https://raw.githubusercontent.com/chadchouGitHub/Wordapp/master/data/twoSorted.csv")
@@ -14,6 +15,27 @@ url3 <- getURL("https://raw.githubusercontent.com/chadchouGitHub/Wordapp/master/
 triSortedCSV<- read.csv(text = url3)
 triSorted <- triSortedCSV[,2:3]
 rm(url2,url3,twoSortedCSV,triSortedCSV)
+=======
+#twoSorted<- get(load('~/word-app2/data/sortedTwo.RData'))
+#triSorted<- get(load('~/word-app2/data/sortedTri.RData'))
+#twoSorted <- readRDS("~/word-app2/data/twoSorted.rds")
+#triSorted <- readRDS("~/word-app2/data/triSorted.rds")
+library(downloader)
+url2 <- "https://github.com/chadchouGitHub/Wordapp/blob/master/data/twoSorted.csv"
+filename <- tempfile()
+download(url2,destfile=filename)
+twoSortedCSV<- read.csv("twoSorted.csv")
+twoSorted <- twoSortedCSV[,2:3]
+url3 <- "https://github.com/chadchouGitHub/Wordapp/blob/master/data/triSorted.csv"
+filename <- tempfile()
+download(url3,destfile=filename)
+triSortedCSV<- read.csv("triSorted.csv")
+triSorted <- triSortedCSV[,2:3]
+rm(filename, url2, url3,twoSortedCSV,triSortedCSV)
+
+
+
+>>>>>>> origin/master
 
 ###----------------------------------loading word ranking df-----------------------------------
 
@@ -77,7 +99,7 @@ triTokenF <- function(x,y) {
                        File=character(), 
                        User=character(), 
                        stringsAsFactors=FALSE) 
-        
+        colnames(w) <- c("Token", "Ranking")
         for (i in 1:l)
         {
                 matchWord <- paste(x,y[i])

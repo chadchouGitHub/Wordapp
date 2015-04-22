@@ -4,8 +4,11 @@ source('wordHelper.R')
 shinyServer(
         function(input, output) {
                 ## -----another place for code-----
+                ntext <- eventReactive(input$goButton, {
+                        input$inText
+                })
                 output$text1 <-renderText({paste(
-                        predictW(input$inText))}) ## get inText to convert to lower case
+                        predictW(ntext()))}) ## get inText to convert to lower case
  
          
                 
