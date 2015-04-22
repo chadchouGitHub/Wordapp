@@ -5,7 +5,10 @@
 
 ###----------------------------------loading word ranking df-----------------------------------
 ### Need to make sure the RData file is in the correct directory
-load('~/word-app/data/sortedOneTwoTri.RData')
+#twoSorted<- get(load('~/word-app2/data/sortedTwo.RData'))
+#triSorted<- get(load('~/word-app2/data/sortedTri.RData'))
+twoSorted <- readRDS("~/word-app2/data/twoSorted.rds")
+triSorted <- readRDS("~/word-app2/data/triSorted.rds")
 
 ###----------------------------------loading word ranking df-----------------------------------
 
@@ -69,7 +72,7 @@ triTokenF <- function(x,y) {
                        File=character(), 
                        User=character(), 
                        stringsAsFactors=FALSE) 
-        
+        colnames(w) <- c("Token", "Ranking")
         for (i in 1:l)
         {
                 matchWord <- paste(x,y[i])
