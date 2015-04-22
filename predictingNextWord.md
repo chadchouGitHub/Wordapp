@@ -18,7 +18,7 @@ Predicting Next Word
 
 A Word predicting Shiny-App
 
-- A shiny App at this link https://chiachingchou.shinyapps.io/wordapp/
+- A shiny App at this link http://chiachingchou.shinyapps.io/wordapp2
 - This Shiny App will take a input text and give out a word.
 - The giving word is a prediction for the next word that user may type fellow up with the input text.
 
