@@ -5,7 +5,15 @@
 
 ###----------------------------------loading word ranking df-----------------------------------
 ### Need to make sure the RData file is in the correct directory
-load('~/word-app/data/sortedOneTwoTri.RData')
+#load('~/word-app/data/sortedOneTwoTri.RData')
+library(RCurl)
+url2 <- getURL("https://raw.githubusercontent.com/chadchouGitHub/Wordapp/master/data/twoSorted.csv")
+twoSortedCSV<- read.csv(text = url2)
+twoSorted <- twoSortedCSV[,2:3]
+url3 <- getURL("https://raw.githubusercontent.com/chadchouGitHub/Wordapp/master/data/triSorted.csv")
+triSortedCSV<- read.csv(text = url3)
+triSorted <- triSortedCSV[,2:3]
+rm(url2,url3,twoSortedCSV,triSortedCSV)
 
 ###----------------------------------loading word ranking df-----------------------------------
 
